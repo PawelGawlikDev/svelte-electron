@@ -27,6 +27,10 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
+      - name: Install Snapcraft
+        if: matrix.os == 'ubuntu-latest'
+        run: sudo snap install snapcraft --classic
+
       - name: build-linux
         if: matrix.os == 'ubuntu-latest'
         run: yarn run build:linux
