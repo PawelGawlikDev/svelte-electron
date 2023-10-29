@@ -1,7 +1,7 @@
 import { test, _electron as electron } from '@playwright/test'
 test('has title', async () => {
   const electronApp = await electron.launch({
-    args: ['out/main/index.js'],
+    args: ['./out/main/index.js'],
     env: { ...process.env, NODE_ENV: 'development' }
   })
   // Evaluation expression in the Electron context.
