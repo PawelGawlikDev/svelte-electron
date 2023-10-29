@@ -1,9 +1,7 @@
 import { test, _electron as electron } from '@playwright/test'
+
 test('has title', async () => {
-  const electronApp = await electron.launch({
-    args: ['./out/main/index.js'],
-    env: { ...process.env, NODE_ENV: 'development' }
-  })
+  const electronApp = await electron.launch()
   // Evaluation expression in the Electron context.
   const appPath = await electronApp.evaluate(async ({ app }) => {
     // This runs in the main Electron process, parameter here is always
