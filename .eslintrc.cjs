@@ -6,7 +6,8 @@ module.exports = {
     'eslint:recommended',
     'plugin:svelte/recommended',
     '@electron-toolkit/eslint-config-ts/recommended',
-    '@electron-toolkit/eslint-config-prettier'
+    '@electron-toolkit/eslint-config-prettier',
+    'plugin:storybook/recommended'
   ],
   overrides: [
     {
@@ -16,5 +17,6 @@ module.exports = {
         parser: '@typescript-eslint/parser'
       }
     }
-  ]
+  ],
+  rules: { '@typescript-eslint/explicit-function-return-type': 'off' }
 }
