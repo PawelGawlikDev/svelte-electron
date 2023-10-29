@@ -19,8 +19,12 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: yarn
-      - name: Install Playwright Browsers
-        run: PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 yarn add --dev playwright
+      - name: Install Playwright Browsers On Windows
+        if: matrix.os == 'windows-latest'
+        run: set PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 && yarn add --dev playwright
+      - name: Install Playwright Browsers On Mac
+        if: matrix.os == 'windows-latest'
+        run: set PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 && yarn add --dev playwright
       - name: Build electron app
         run: yarn build
       - name: Run Playwright tests
