@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Install Playwright
-        run: pnpm install --save-dev playwright
+        run: pnpm exec playwright install
       - name: Build Storybook
         run: pnpm build-storybook --quiet
       - name: Serve Storybook and run tests
