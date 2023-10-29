@@ -20,7 +20,8 @@
     "build:linux": "npm run build && electron-builder --linux --config",
     "release": "standard-version",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test-storybook:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"pnpm build-storybook --quiet && npx http-server storybook-static --port 6006 --silent\" \"wait-on http://127.0.0.1:6006 && pnpm test-storybook\""
   },
   "dependencies": {
     "@electron-toolkit/preload": "^2.0.0",
