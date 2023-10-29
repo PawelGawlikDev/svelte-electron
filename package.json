@@ -44,12 +44,14 @@
     "@storybook/testing-library": "0.2.2",
     "@sveltejs/vite-plugin-svelte": "^2.4.5",
     "@types/node": "^18.17.5",
+    "concurrently": "8.2.2",
     "electron": "^25.6.0",
     "electron-builder": "^24.6.3",
     "electron-vite": "^1.0.27",
     "eslint": "^8.47.0",
     "eslint-plugin-storybook": "^0.6.15",
     "eslint-plugin-svelte": "^2.32.4",
+    "http-server": "^14.1.1",
     "playwright": "^1.39.0",
     "prettier": "^3.0.2",
     "prettier-plugin-svelte": "^3.0.3",
@@ -61,6 +63,7 @@
     "svelte-check": "^3.5.0",
     "tslib": "^2.6.2",
     "typescript": "^5.1.6",
-    "vite": "^4.4.9"
+    "vite": "^4.4.9",
+    "wait-on": "^7.0.1"
   }
 }

@@ -18,7 +18,7 @@ jobs:
         with:
           version: 8
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
       - name: Install Playwright
         run: pnpm install --save-dev playwright
       - name: Build Storybook
@@ -45,7 +45,7 @@ jobs:
         with:
           version: 8
       - name: Install dependencies
-        run: pnpm
+        run: pnpm install --frozen-lockfile
       - name: Install Playwright Browsers On Windows
         if: matrix.os == 'windows-latest'
         run: set PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 && pnpm install --save-dev playwright
