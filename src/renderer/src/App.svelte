@@ -42,7 +42,7 @@
       <article>
         <h2 class="title">Configuring</h2>
         <p class="detail">
-          Config with <span>electron.vite.config.ts</span> and refer to the
+          Config with <span>vite.config.ts</span> and refer to the
           <a rel="noopener noreferrer" target="_blank" href="https://electron-vite.org/config"
             >config guide</a
           >.
