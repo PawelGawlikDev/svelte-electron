@@ -20,13 +20,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Install Playwright
-        run: pnpm exec playwright install
+        run: pnpm exec playwright install --with-deps chromium
       - name: Build Storybook
         run: pnpm build-storybook --quiet
       - name: Serve Storybook and run tests
         run: pnpm test-storybook:ci
   test:
-    name: run e2e tests
+    name: Test electron app
     needs: storybook
     runs-on: ${{ matrix.os }}
     strategy:
