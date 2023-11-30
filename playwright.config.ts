@@ -1,6 +1,5 @@
 import { defineConfig } from '@playwright/test'
 import path from 'path'
-console.log(path.join(__dirname, '../out/main/index.js'))
 
 /**
  * Read environment variables from file.

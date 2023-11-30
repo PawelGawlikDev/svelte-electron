@@ -5,8 +5,29 @@ on:
   pull_request:
     branches: [master]
 jobs:
+  lint:
+    name: Lint and check code
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Eslint
+        run: pnpm lint
+      - name: Typecheck
+        run: pnpm typecheck
+      - name: Typecheck node
+        run: pnpm typecheck:node
   storybook:
     name: Test storybook
+    needs: lint
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
