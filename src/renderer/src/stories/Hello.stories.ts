@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/svelte'
 
-import Hello from '../renderer/src/components/Hello.svelte'
+import Hello from '../components/Hello.svelte'
 
 const meta = {
   title: 'Hello',
@@ -13,6 +13,6 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    name: 'Test'
+    name: 'test'
   }
 }

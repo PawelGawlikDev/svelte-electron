@@ -3,7 +3,7 @@ import path from 'path'
 
 test('example test', async () => {
   const electronApp = await electron.launch({
-    args: [path.join(__dirname, '../out/main/index.js')]
+    args: [path.join(__dirname, '../../out/main/index.js')]
   })
   const isPackaged = await electronApp.evaluate(async ({ app }) => {
     // This runs in Electron's main process, parameter here is always
