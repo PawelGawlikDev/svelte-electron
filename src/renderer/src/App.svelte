@@ -1,7 +1,6 @@
 <script lang="ts">
   import icons from './assets/icons.svg'
   import Versions from './components/Versions.svelte'
-  import Hello from './components/Hello.svelte'
 </script>
 
 <div class="container">
@@ -10,7 +9,6 @@
   <svg class="hero-logo" viewBox="0 0 900 300">
     <use xlink:href={`${icons}#electron`} />
   </svg>
-  <Hello name={'Paweł'} />
   <h2 class="hero-text">
     You've successfully created an Electron project with Svelte and TypeScript
   </h2>
