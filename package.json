@@ -25,6 +25,7 @@
     "release": "standard-version",
     "start": "electron-vite preview",
     "storybook": "storybook dev -p 6006",
+    "test:storybook": "test-storybook",
     "svelte-check": "svelte-check --tsconfig ./tsconfig.json",
     "test-storybook:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"pnpm build-storybook --quiet && npx http-server storybook-static --port 6006 --silent\" \"wait-on http://127.0.0.1:6006 && pnpm test-storybook\"",
     "typecheck": "npm run typecheck:node && npm run svelte-check",
