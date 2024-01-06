@@ -21,6 +21,7 @@ jobs:
         run: pnpm install --frozen-lockfile
   lint:
     name: Lint and check code
+    needs: prepare
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -33,7 +34,7 @@ jobs:
         run: pnpm typecheck:node
   unitTests:
     name: Unit tests
-    needs: lint
+    needs: [prepare, lint]
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -42,7 +43,7 @@ jobs:
         run: pnpm test:unit
   storybook:
     name: Test storybook
-    needs: unitTests
+    needs: [prepare, unitTests]
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -55,7 +56,7 @@ jobs:
         run: pnpm test-storybook:ci
   test:
     name: Test electron app
-    needs: storybook
+    needs: [prepare, storybook]
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
