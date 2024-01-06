@@ -27,6 +27,13 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.14.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'pnpm'
       - name: Eslint
         run: pnpm lint
       - name: Typecheck
@@ -40,6 +47,13 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.14.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'pnpm'
       - name: Run unit tests
         run: pnpm test:unit
   storybook:
@@ -49,6 +63,13 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.14.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'pnpm'
       - name: Install Playwright
         run: pnpm exec playwright install --with-deps chromium
       - name: Build Storybook
@@ -65,6 +86,13 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.14.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'pnpm'
       - name: Install Playwright Browsers On Windows
         if: matrix.os == 'windows-latest'
         run: set PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 && pnpm install --save-dev playwright
