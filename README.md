@@ -1,4 +1,4 @@
-# Project Title
+# Svelte electron boliplater
 
 ### Svelte-electron-boilerplate
 
