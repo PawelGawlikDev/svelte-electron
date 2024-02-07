@@ -14,9 +14,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8
+          cache: "pnpm"
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Eslint
@@ -35,16 +33,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8
+          cache: "pnpm"
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Run unit tests
         run: pnpm test:unit
   storybook:
     name: Test storybook
-    needs: unitTests
+    needs: lint
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -52,9 +48,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8
+          cache: "pnpm"
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Install Playwright
@@ -65,7 +59,7 @@ jobs:
         run: pnpm test-storybook:ci
   test:
     name: Test electron app
-    needs: storybook
+    needs: [storybook, unitTests]
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -76,9 +70,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8
+          cache: "pnpm"
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Install Playwright Browsers On Windows
