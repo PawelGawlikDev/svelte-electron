@@ -27,7 +27,6 @@ jobs:
         run: pnpm typecheck:node
   unitTests:
     name: Unit tests
-    needs: lint
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -44,7 +43,6 @@ jobs:
         run: pnpm test:unit
   storybook:
     name: Test storybook
-    needs: unitTests
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -65,7 +63,6 @@ jobs:
         run: pnpm test-storybook:ci
   test:
     name: Test electron app
-    needs: storybook
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
