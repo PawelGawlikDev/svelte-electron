@@ -6,3 +6,5 @@ out
 /playwright-report/
 /playwright/.cache/
 storybook-static
+
+*storybook.log
