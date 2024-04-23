@@ -19,8 +19,7 @@ jobs:
           version: 8
           run_install: |
             - recursive: true
-              args: [--frozen-lockfile, --strict-peer-dependencies]
-            - args: [--global, gulp, prettier, typescript]
+            - args: [--frozen-lockfile]
       - name: Install dependencies
         run: pnpm install
       - name: Eslint
@@ -43,8 +42,7 @@ jobs:
           version: 8
           run_install: |
             - recursive: true
-              args: [--frozen-lockfile, --strict-peer-dependencies]
-            - args: [--global, gulp, prettier, typescript]
+            - args: [--frozen-lockfile]
       - name: Install dependencies
         run: pnpm install
       - name: Run unit tests
@@ -61,7 +59,9 @@ jobs:
       - uses: pnpm/action-setup@v3
         with:
           version: 8
-          cache: 'pnpm'
+          run_install: |
+            - recursive: true
+            - args: [--frozen-lockfile]
       - name: Install dependencies
         run: pnpm install
       - name: Install Playwright
@@ -87,8 +87,7 @@ jobs:
           version: 8
           run_install: |
             - recursive: true
-              args: [--frozen-lockfile, --strict-peer-dependencies]
-            - args: [--global, gulp, prettier, typescript]
+            - args: [--frozen-lockfile]
       - name: Install dependencies
         run: pnpm install
       - name: Install Playwright Browsers On Windows
