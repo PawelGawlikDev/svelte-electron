@@ -27,9 +27,10 @@ jobs:
       - uses: pnpm/action-setup@v3
         with:
           version: 8
+          cache: 'pnpm'
 
       - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Install Snapcraft
         if: matrix.os == 'ubuntu-latest'

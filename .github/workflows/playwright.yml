@@ -17,8 +17,9 @@ jobs:
       - uses: pnpm/action-setup@v3
         with:
           version: 8
+          cache: 'pnpm'
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
       - name: Eslint
         run: pnpm lint
       - name: Typecheck
@@ -37,8 +38,9 @@ jobs:
       - uses: pnpm/action-setup@v3
         with:
           version: 8
+          cache: 'pnpm'
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
       - name: Run unit tests
         run: pnpm test:unit
   storybook:
@@ -53,8 +55,9 @@ jobs:
       - uses: pnpm/action-setup@v3
         with:
           version: 8
+          cache: 'pnpm'
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
       - name: Install Playwright
         run: pnpm exec playwright install --with-deps chromium
       - name: Build Storybook
@@ -76,8 +79,9 @@ jobs:
       - uses: pnpm/action-setup@v3
         with:
           version: 8
+          cache: 'pnpm'
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
       - name: Install Playwright Browsers On Windows
         if: matrix.os == 'windows-latest'
         run: set PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 && pnpm install --save-dev playwright
