@@ -16,9 +16,7 @@ test('example test', async () => {
   // Wait for the first BrowserWindow to open
   // and return its Page object
   const window = await electronApp.firstWindow()
-  const text = window.getByText(
-    "You've successfully created an Electron project with Svelte and TypeScript"
-  )
+  const text = window.getByText('Build an Electron app with Svelte and TypeScript')
   expect(await text.isVisible()).toBeTruthy()
 
   // close app

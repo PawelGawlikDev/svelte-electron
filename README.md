@@ -1,90 +1,34 @@
-# Svelte electron boliplater
+# electron-app
 
-### Svelte-electron-boilerplate
+An Electron application with Svelte and TypeScript
 
-# Description
+## Recommended IDE Setup
 
-This is a [electron](https://www.electronjs.org) app template based on [electron-vite](https://electron-vite.org) with integrated [Playwright](https://playwright.dev) e2e tests and [vitest](https://vitest.dev).
+- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
 
-# Getting started
+## Project Setup
 
-## Dependencies
-
-- node
-- npm/yarn/pnpm (recomended)
-
-## Run Locally
-
-Clone the project
+### Install
 
 ```bash
-  git clone https://github.com/PawelGawlikDev/svelte-electron.git
+$ pnpm install
 ```
 
-Go to the project directory
+### Development
 
 ```bash
-  cd svelte-electron
+$ pnpm dev
 ```
 
-Install dependencies
+### Build
 
 ```bash
-  pnpm install
+# For windows
+$ pnpm build:win
+
+# For macOS
+$ pnpm build:mac
+
+# For Linux
+$ pnpm build:linux
 ```
-
-Start the server
-
-```bash
-  pnpm dev
-```
-
-## Storybook
-
-This template have integrated storybook. To run it type:
-
-```bash
-pnpm storybook
-```
-
-## Running Tests
-
-This template contain two type of tests:
-
-- e2e
-- unit
-
-> [!WARNING]
-> Before run tests build app using
->
-> ```bash
-> pnpm build
-> ```
-
-To run e2e test, run the following command
-
-```bash
-  pnpm test:integration
-```
-
-To run unit tests, run the following command
-
-```bash
-  pnpm test:unit
-```
-
-## Deployment
-
-This project contain ready to use github workflow to test and release ready app. To deploy ready app type:
-
-```bash
-  pnpm release
-```
-
-And push commit with bump version to github repository
-
-```bash
-git push --follow-tags origin master
-```
-
-After finish tests and release you can create tag and publish release on github release panel.
