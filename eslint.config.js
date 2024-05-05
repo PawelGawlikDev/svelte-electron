@@ -1,4 +1,6 @@
 module.exports = {
+  files: ['.js', '.mjs', '.cjs', '.mjs', '.ts', '.cts', '.mts'],
+  ignores: ['node_modules', 'dist', 'out', '.gitignore'],
   parserOptions: {
     extraFileExtensions: ['.svelte']
   },
