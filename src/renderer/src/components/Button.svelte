@@ -2,19 +2,10 @@
   export let rounded = true
 </script>
 
-<button class="button" class:rounded on:click>
+<button
+  class="border-[3px] border-solid p-5 bg-white outline-none {rounded ? 'rounded-3xl' : ''}"
+  class:rounded
+  on:click
+>
   <slot />
 </button>
-
-<style>
-  .rounded {
-    border-radius: 35px;
-  }
-
-  button {
-    border: 3px solid;
-    padding: 10px 20px;
-    background-color: white;
-    outline: none;
-  }
-</style>
