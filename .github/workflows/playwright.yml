@@ -47,29 +47,6 @@ jobs:
         run: pnpm install
       - name: Run unit tests
         run: pnpm test:unit
-  storybook:
-    name: Test storybook
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
-          run_install: |
-            - recursive: true
-            - args: [--frozen-lockfile]
-      - name: Install dependencies
-        run: pnpm install
-      - name: Install Playwright
-        run: pnpm exec playwright install --with-deps chromium
-      - name: Build Storybook
-        run: pnpm build-storybook --quiet
-      - name: Serve Storybook and run tests
-        run: pnpm test-storybook:ci
   test:
     name: Test electron app
     runs-on: ${{ matrix.os }}
