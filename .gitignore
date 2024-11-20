@@ -5,6 +5,5 @@ out
 /test-results/
 /playwright-report/
 /playwright/.cache/
-storybook-static
 /test-results/
 /playwright-report/

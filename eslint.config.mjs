@@ -1,7 +1,3 @@
-import globals from 'globals'
-import pluginJs from '@eslint/js'
-import tseslint from 'typescript-eslint'
-
 export default [
   {
     files: ['.js', '.mjs', '.cjs', '.mjs', '.ts', '.cts', '.mts'],
